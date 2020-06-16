@@ -6,18 +6,29 @@
 </head>
 <body>
 <script>
-    function KhoiTaoMang(array) {
+    function initialArray(array) {
         let sizeArray;
         do {
-            sizeArray = prompt('nhap vao so phan tu')
-        } while (sizeArray === '');
-        for (let i = 0; i < array.length; i++ ){
-            array[i] = +prompt('nhap phan tu thu: ' + i);
-
+            sizeArray = +prompt('nhap vao so phan tu')
+        } while (sizeArray === '' || sizeArray <= 0 );
+        for (let i = 0; i < sizeArray; i++ ){
+            array[i] = Math.round(Math.random()*20) + ' ';
         }
-
-
     }
+    function countIntAbove10(array){
+        let countAbove10 = 0;
+        for (let i = 0; i < array.length; i ++){
+            if (array[i] >= 10){
+                countAbove10++;
+            }
+        }
+        return countAbove10;
+    }
+    let array10 = [];
+    initialArray(array10);
+    document.write(array10)
+    document.write('<br>')
+    document.write('co ' + countIntAbove10(array10) + ' so lon hon 10')
 </script>
 </body>
 </html>

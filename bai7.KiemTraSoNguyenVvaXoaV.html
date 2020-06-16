@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>bai 7 </title>
 </head>
 <body>
+<script>
+    function initialArray(array) {
+        let sizeArray;
+        do {
+            sizeArray = +prompt('nhap vao so phan tu')
+        } while (sizeArray === '' || sizeArray <= 0 );
+        for (let i = 0; i < sizeArray; i++ ){
+            array[i] = Math.round(Math.random()*30 -10) + ' ';
+        }
+    }
+    function checkV(array,number){
+        for (let i = 0; i < array.length ; i ++){
+            if (+array[i] === V){
+                return indexV = i;
+            } else if (i === array.length - 1){
+                return false;
+            }
+        }
+    }
+    function removeV(array,result){
+        if (result){
+          for (let i = indexV;i < array.length; i++){
+              array[i] = array[i + 1];
+              if (i === array.length -1){
+                  array[i] = 0;
+              }
+          }
+        }return array;
+    }
+    let array10 = [];
+    initialArray(array10);
+    let V = Math.round(Math.random()*20 -10);
+    let indexV;
+    let result = checkV(array10,V);
+    document.write('V = ' + V + '<br>');
+    document.write(array10 + '<br>')
+    let display = result ? removeV(array10,result) : "V is not in the array";
+    document.write('Resul: '+ '<br>' + display)
 
+</script>
 </body>
 </html>

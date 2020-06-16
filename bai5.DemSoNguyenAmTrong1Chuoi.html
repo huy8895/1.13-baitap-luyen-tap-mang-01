@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>bai 5 </title>
 </head>
 <body>
-
+<script>
+    function initialArray(array) {
+        let sizeArray;
+        do {
+            sizeArray = +prompt('nhap vao so phan tu')
+        } while (sizeArray === '' || sizeArray <= 0 );
+        for (let i = 0; i < sizeArray; i++ ){
+            array[i] = Math.round(Math.random()*30 -10) + ' ';
+        }
+    }
+    function countNegative(array){
+        let count = 0;
+        for (let i = 0; i < array.length ; i ++){
+            if (array[i] < 0){
+                count++;
+            }
+        }
+        return count;
+    }
+    let array10 = [];
+    initialArray(array10);
+    document.write(array10)
+    document.write('<br>')
+    document.write('so luong so nguyen am trong chuoi la: ' +  countNegative(array10))
+</script>
 </body>
 </html>

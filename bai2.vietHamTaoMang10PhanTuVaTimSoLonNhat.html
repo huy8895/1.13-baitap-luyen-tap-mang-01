@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>bai 2 </title>
 </head>
 <body>
-
+<script>
+    function initialArray(array) {
+        let sizeArray;
+        do {
+            sizeArray = +prompt('nhap vao so phan tu')
+        } while (sizeArray === '' || sizeArray <= 0 );
+        for (let i = 0; i < sizeArray; i++ ){
+            array[i] = Math.round(Math.random()*20) + ' ';
+        }
+    }
+    function showIndexMax(array){
+        let max = 0;
+        let index;
+        for (let i = 0; i < array.length; i ++){
+            if (max < array[i]){
+                max = array[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+    let array10 = [];
+    initialArray(array10);
+    let maxArrayInt = array10[showIndexMax(array10)];
+    let indexMaxArrayInt = showIndexMax(array10);
+    document.write(array10)
+    document.write('<br>')
+    document.write('phan tu co gia tri lon nhat la: ' + maxArrayInt + ' tai vi tri: ' + indexMaxArrayInt)
+</script>
 </body>
 </html>

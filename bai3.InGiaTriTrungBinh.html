@@ -2,9 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>bai 3 </title>
 </head>
 <body>
-
+<script>
+    function initialArray(array) {
+        let sizeArray;
+        do {
+            sizeArray = +prompt('nhap vao so phan tu')
+        } while (sizeArray === '' || sizeArray <= 0 );
+        for (let i = 0; i < sizeArray; i++ ){
+            array[i] = Math.round(Math.random()*20) + ' ';
+        }
+    }
+    function showIndexMax(array){
+        let max = 0;
+        let index;
+        for (let i = 0; i < array.length; i ++){
+            if (max < +array[i]){
+                max = +array[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+    function displayAverageOfElements(array){
+        let average = 0;
+        let sum = 0;
+        for(let i = 0; i < array.length; i ++){
+            sum += +array[i];
+        }
+        return average = sum/array.length;
+    }
+    let array10 = [];
+    initialArray(array10);
+    let maxArrayInt = array10[(showIndexMax(array10))];
+    let everageOfElements = displayAverageOfElements(array10);
+    document.write(array10)
+    document.write('<br>')
+    document.write('phan tu co gia tri lon nhat la: ' + maxArrayInt + ' giá trị trung bình của các phần tử la: ' + everageOfElements)
+</script>
 </body>
 </html>
